@@ -3,8 +3,8 @@
 const form = document.getElementById("formID");
 let email = document.getElementById("exampleInputEmail1");
 let password = document.getElementById("exampleInputPassword1");
-let myEmail = "askmammad@gmail.com";
-let myPassword = "123456789";
+let myEmail = "FarhadPashayev@gmail.com";
+let myPassword = "Prototype238";
 let modalText = document.getElementById("modal_text");
 
 form.addEventListener("submit", (e) => checkValue(e));

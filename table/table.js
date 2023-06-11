@@ -1,20 +1,33 @@
 "use strict"
-let table = document.getElementById("table");
-function myFunction() {
-  var value = document.getElementById("select").value;
-  var newHTML = "";
-  for (i = 0; i < value; i++) {
-    newHTML += "<tr>";
-    for (j = 0; j < value; j++) {
-      if (i == j || i + j == value - 1) {
-        newHTML +=
-          '<td style="width: 50px; height: 50px; background-color: black;"></td>';
-      } else {
-        newHTML +=
-          '<td style="width: 50px; height: 50px; background-color: turquoise;"></td>';
-      }
-    }
-    newHTML += "</tr>";
-  }
-  table.innerHTML = newHTML;
+
+let data=""
+var slc = document.getElementById('slc');
+
+console.log(slc.value);
+
+let color=""
+
+function Render() {
+    data = ''
+    for(let i=0;i<slc.value;i++){
+        data+=`<tr>`;
+    
+        for(let j=0;j<slc.value;j++){
+            if(i==j || j==slc.value-i-1){
+                color='black';
+            }
+            else{
+                color='';
+            }
+            data+=`<td style="background-color:${color};"> </td>`;
+            
+    
+        }
+        data+=`</tr>`
+    } 
+    document.getElementById("tbl").innerHTML=data;
 }
+
+
+slc.addEventListener('change',Render);
+
